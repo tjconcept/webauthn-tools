@@ -8,6 +8,52 @@
 - `parseClientDataJSON()`
 - `parseAuthenticatorData()`
 
+## Example
+
+```js
+import {equals} from 'https://esm.sh/jsr/@std/bytes@1.0.2/equals.js'
+import {
+  importKey,
+  getChallenge,
+  verifySignature,
+} from 'https://esm.sh/gh/tjconcept/webauthn-tools@1.0.0'
+
+async function signIn() {
+  // server
+  const serverChallenge = new Uint8Array([
+    81, 171, 233, 210, 73, 148, 27, 141, 244, 227, 163, 237, 182, 58, 191, 57,
+  ])
+
+  // client
+  const assertion = await navigator.credentials.get({
+    // https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get
+    publicKey: {
+      challenge: serverChallenge,
+    },
+  })
+
+  // server
+  const key = await importKey({
+    algorithm: attestation.response.getPublicKeyAlgorithm(),
+    data: attestation.response.getPublicKey(),
+  })
+  const signedChallenge = getChallenge(assertion.response.clientDataJSON)
+  if (!equals(serverChallenge, signedChallenge)) {
+    throw new Error('Invalid challenge')
+  }
+
+  return verifySignature({
+    key,
+    authenticatorData: assertion.response.authenticatorData,
+    clientDataJSON: assertion.response.clientDataJSON,
+    signature: assertion.response.signature,
+  })
+}
+```
+
+For sending JSON back and forth between server and client, these
+[JSON helpers](https://github.com/tjconcept/webauthn-json) might be handy.
+
 ## `importKey()`
 
 Import the public key of a Passkey attestation ("sign up").
