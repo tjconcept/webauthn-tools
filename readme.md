@@ -54,6 +54,9 @@ async function signIn() {
 For sending JSON back and forth between server and client, these
 [JSON helpers](https://github.com/tjconcept/webauthn-json) might be handy.
 
+A ready-to-run browser demo can be seen at
+https://github.com/tjconcept/webauthn-demo.
+
 ## `importKey()`
 
 Import the public key of a Passkey attestation ("sign up").
