@@ -1,6 +1,5 @@
 import test from 'https://esm.sh/tape@5.9.0?pin=v135'
 import {decodeBase64Url} from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
-import join from 'https://esm.sh/psjoin@1.0.0'
 import {
 	importKey,
 	getChallenge,
