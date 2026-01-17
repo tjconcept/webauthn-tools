@@ -1,6 +1,6 @@
 import {decodeBase64Url} from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
 import {concat} from 'https://esm.sh/jsr/@std/bytes@1.0.2/concat.js'
-import join from 'https://esm.sh/psjoin@1.0.0'
+import join from 'https://esm.sh/psjoin@2.0.1'
 
 const importOptionsByCose = new Map([
 	[-8, {name: 'Ed25519'}],
