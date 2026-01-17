@@ -16,7 +16,7 @@ import {
   importKey,
   getChallenge,
   verifySignature,
-} from 'https://esm.sh/gh/tjconcept/webauthn-tools@1.0.0'
+} from 'https://esm.sh/gh/tjconcept/webauthn-tools@1.1.0'
 
 async function signIn() {
   // server
