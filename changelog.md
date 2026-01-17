@@ -8,6 +8,10 @@ and this project adheres to
 
 ## Unreleased
 
+### Changed
+
+- Use native toBase64 and fromBase64 methods
+
 ## 1.0.0 - 2024-10-24
 
 ### Added

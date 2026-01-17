@@ -90,7 +90,8 @@ const attestation = await navigator.credentials.create({
     rp: {name: 'Acme, inc.'},
     user: {
       id: new Uint8Array([
-        169, 65, 116, 220, 58, 131, 135, 194, 166, 236, 37, 43, 65, 67, 138, 235,
+        169, 65, 116, 220, 58, 131, 135, 194, 166, 236, 37, 43, 65, 67, 138,
+        235,
       ]),
       name: 'john_doe',
       displayName: 'john_doe',
@@ -190,7 +191,8 @@ const attestation = await navigator.credentials.create({
     rp: {name: 'Acme, inc.'},
     user: {
       id: new Uint8Array([
-        169, 65, 116, 220, 58, 131, 135, 194, 166, 236, 37, 43, 65, 67, 138, 235,
+        169, 65, 116, 220, 58, 131, 135, 194, 166, 236, 37, 43, 65, 67, 138,
+        235,
       ]),
       name: 'john_doe',
       displayName: 'john_doe',
@@ -237,7 +239,8 @@ const attestation = await navigator.credentials.create({
     rp: {name: 'Acme, inc.'},
     user: {
       id: new Uint8Array([
-        169, 65, 116, 220, 58, 131, 135, 194, 166, 236, 37, 43, 65, 67, 138, 235,
+        169, 65, 116, 220, 58, 131, 135, 194, 166, 236, 37, 43, 65, 67, 138,
+        235,
       ]),
       name: 'john_doe',
       displayName: 'john_doe',

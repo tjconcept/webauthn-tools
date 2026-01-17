@@ -1,5 +1,4 @@
 import test from 'https://esm.sh/tape@5.9.0?pin=v135'
-import {decodeBase64Url} from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
 import {
 	importKey,
 	getChallenge,
@@ -363,3 +362,9 @@ test('`parseAuthenticatorData`', (t) => {
 	})
 	t.end()
 })
+
+function decodeBase64Url(encoded) {
+	return Uint8Array.fromBase64(encoded, {
+		alphabet: 'base64url',
+	})
+}

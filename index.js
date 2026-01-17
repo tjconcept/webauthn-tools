@@ -1,4 +1,3 @@
-import {decodeBase64Url} from 'https://esm.sh/jsr/@std/encoding@1.0.5/base64url.js'
 import {concat} from 'https://esm.sh/jsr/@std/bytes@1.0.2/concat.js'
 import join from 'https://esm.sh/psjoin@2.0.1'
 
@@ -26,7 +25,7 @@ export function importKey({algorithm, data, extractable = false}) {
 
 export function getChallenge(clientDataJSON) {
 	const parsed = parseClientDataJSON(clientDataJSON)
-	return decodeBase64Url(parsed.challenge)
+	return Uint8Array.fromBase64(parsed.challenge, {alphabet: 'base64url'})
 }
 
 export function parseClientDataJSON(data) {
